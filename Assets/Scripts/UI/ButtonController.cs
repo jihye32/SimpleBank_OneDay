@@ -20,4 +20,8 @@ public class ButtonController : MonoBehaviour
         GameManager.instance.outputPanel.SetActive(false);
     }
 
+    public int OnButton()
+    {
+        return 0;
+    }
 }
