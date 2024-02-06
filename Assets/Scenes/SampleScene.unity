@@ -662,7 +662,7 @@ GameObject:
   - component: {fileID: 139701335}
   - component: {fileID: 139701334}
   m_Layer: 0
-  m_Name: Text (TMP) (1)
+  m_Name: money
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -708,7 +708,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 100000
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2b14c71ea5da5034f99d0ee9857d188c, type: 2}
   m_sharedMaterial: {fileID: 6652629329073932733, guid: 2b14c71ea5da5034f99d0ee9857d188c, type: 2}
@@ -932,7 +932,7 @@ GameObject:
   - component: {fileID: 203467476}
   - component: {fileID: 203467475}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: moneyText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1954,7 +1954,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 0}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 851362589}
+        m_TargetAssemblyTypeName: ButtonController, Assembly-CSharp
+        m_MethodName: OnOutputButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &555428701
 GameObject:
   m_ObjectHideFlags: 0
@@ -2823,7 +2835,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 0}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 851362589}
+        m_TargetAssemblyTypeName: ButtonController, Assembly-CSharp
+        m_MethodName: OnInputButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &779804184
 GameObject:
   m_ObjectHideFlags: 0
@@ -3104,6 +3128,7 @@ GameObject:
   m_Component:
   - component: {fileID: 851362588}
   - component: {fileID: 851362587}
+  - component: {fileID: 851362589}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -3125,6 +3150,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   money: 0
   bank_money: 0
+  moneyText: {fileID: 139701334}
+  bankText: {fileID: 2094740181}
+  inputButton: {fileID: 773888646}
+  outputButton: {fileID: 533314565}
+  inputPanel: {fileID: 54788412}
+  outputPanel: {fileID: 418802574}
 --- !u!4 &851362588
 Transform:
   m_ObjectHideFlags: 0
@@ -3140,6 +3171,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &851362589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851362586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09445eedcd148b94b8ced81f27fc2329, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &860437993
 GameObject:
   m_ObjectHideFlags: 0
@@ -5196,7 +5239,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 0}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 851362589}
+        m_TargetAssemblyTypeName: ButtonController, Assembly-CSharp
+        m_MethodName: OnOutButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1569996081
 GameObject:
   m_ObjectHideFlags: 0
@@ -6047,7 +6102,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 0}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 851362589}
+        m_TargetAssemblyTypeName: ButtonController, Assembly-CSharp
+        m_MethodName: OnOutButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1891772027
 GameObject:
   m_ObjectHideFlags: 0
@@ -6839,7 +6906,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 50000
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2b14c71ea5da5034f99d0ee9857d188c, type: 2}
   m_sharedMaterial: {fileID: 6652629329073932733, guid: 2b14c71ea5da5034f99d0ee9857d188c, type: 2}
