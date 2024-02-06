@@ -3,6 +3,12 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Windows;
+
+public enum moneyType
+{
+    input, output
+}
 
 public class GameManager : MonoBehaviour
 {
@@ -12,6 +18,8 @@ public class GameManager : MonoBehaviour
     [Header("Text")]
     public TextMeshProUGUI moneyText;
     public TextMeshProUGUI bankText;
+    public TMP_InputField moneyInput;
+    public TMP_InputField moneyOutput;
 
     [Header("Button")]
     public GameObject inputButton;
@@ -22,6 +30,8 @@ public class GameManager : MonoBehaviour
     public GameObject outputPanel;
     public GameObject noActionPanel;
 
+    private InputMoney inputMoney;
+    private OutputMoney outputMoney;
     //╫л╠шео
     public static GameManager instance;
 
@@ -32,19 +42,32 @@ public class GameManager : MonoBehaviour
             instance = this;
         }
         else Destroy(gameObject);
+
+        inputMoney = GetComponent<InputMoney>();
+        outputMoney = GetComponent<OutputMoney>();
+        SetStartSetting();
     }
 
     private void Start()
     {
-        SetStartSetting();
-        moneyText.text = money.ToString();
-        bankText.text = bank_money.ToString();
+        moneyText.text = money.ToString("N0");
+        bankText.text = bank_money.ToString("N0");
     }
 
     private void SetStartSetting()
     {
         money = 100000;
         bank_money = 50000;
+    }
+
+    public void SetInputMoney(int input)
+    {
+        inputMoney.MoneyInBank(input);
+    }
+
+    public void SetOutputMoney(int input)
+    {
+        outputMoney.MoneyOutBank(input);
     }
 
     public void NoActionPanel()

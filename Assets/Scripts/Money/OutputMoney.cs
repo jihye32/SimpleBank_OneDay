@@ -2,26 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InputMoney : MonoBehaviour
+public class OutputMoney : MonoBehaviour
 {
     private int money;
     private int bank_money;
     private int input_money;
 
-    public void MoneyInBank(int input)
+    public void MoneyOutBank(int input)
     {
         money = GameManager.instance.money;
         bank_money = GameManager.instance.bank_money;
 
         input_money = input;
-        if(input_money > money)
+        if (input_money > bank_money)
         {
             GameManager.instance.NoActionPanel();
         }
         else
         {
-            money -= input_money;
-            bank_money += input_money;
+            money += input_money;
+            bank_money -= input_money;
         }
 
         GameManager.instance.bankText.text = bank_money.ToString("N0");
